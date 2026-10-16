@@ -10,8 +10,8 @@
 
 */
 :root {
-  --main-font: 'Inter';
-  --accent-font: 'Press Start 2P';
+  --main-font: "Inter";
+  --accent-font: "Press Start 2P";
 
   --card-text-weight: 400;
   --card-title-weight: 785;
@@ -25,9 +25,12 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght' var(--card-text-weight);
+  font-variation-settings: "wght" var(--card-text-weight);
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--card-title-weight);
+  font-variation-settings: "wght" var(--card-title-weight);
 }
