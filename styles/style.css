@@ -290,6 +290,45 @@
   }
 }
 
+/* Карточка 1 — Начало: тёплые воспоминания */
+.card__image_filter_1 {
+  filter: sepia(0.35) saturate(1.2);
+}
+
+/* Карточка 2 — Сомнения */
+.card__image_filter_2 {
+  filter: grayscale(0.8);
+}
+
+/* Карточка 3 — Смелость */
+.card__image_filter_3 {
+  filter: contrast(1.35);
+}
+
+/* Карточка 4 — Поиск */
+.card__image_filter_4 {
+  filter: hue-rotate(45deg);
+}
+
+/* Карточка 5 — Поддержка */
+.card__image_filter_5 {
+  filter: saturate(1.55);
+}
+
+/* Карточка 6 — Находчивость */
+.card__image_filter_6 {
+  filter: invert(0.15) hue-rotate(55deg);
+}
+
+/* Карточка 7 — Упорство */
+.card__image_filter_7 {
+  filter: brightness(0.72);
+}
+
+/* Карточка 8 — Дальше */
+.card__image_filter_8 {
+  filter: brightness(1.08) contrast(1.15);
+}
 
 @media (width <= 375px) {
   .header {
