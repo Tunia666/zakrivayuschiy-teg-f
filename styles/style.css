@@ -95,8 +95,7 @@
   padding: 4px 10px;
   font-size: 18px;
   line-height: 1.25;
-  font-variation-settings:
-    'wght' var(--card-title-weight);
+  font-variation-settings: "wght" var(--card-title-weight);
 }
 
 /* Изображение */
@@ -106,6 +105,7 @@
   overflow: hidden;
   border-block: 2px solid #000;
   aspect-ratio: 1 / 1;
+  position: relative;
 }
 
 .card__image {
@@ -194,4 +194,47 @@
   flex: none;
   inline-size: 21px;
   block-size: 21px;
+}
+
+/* Лейбл на изображении */
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  color: #000;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+/* Проверка поддержки обводки текста */
+
+@supports (
+  (-webkit-text-stroke: 1px var(--label-stroke-color)) or
+    (text-stroke: 1px var(--label-stroke-color))
+) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    text-stroke: 1px var(--label-stroke-color);
+  }
+}
+
+/* Запасной вариант через тень */
+
+@supports not (
+  (-webkit-text-stroke: 1px var(--label-stroke-color)) or
+    (text-stroke: 1px var(--label-stroke-color))
+) {
+  .card__label {
+    text-shadow:
+      1px 0 var(--label-stroke-color),
+      -1px 0 var(--label-stroke-color),
+      0 1px var(--label-stroke-color),
+      0 -1px var(--label-stroke-color);
+  }
 }
