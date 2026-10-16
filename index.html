@@ -578,17 +578,36 @@
         <button
           class="button save__button"
           type="button"
-          id="save-memory-button"
           aria-haspopup="dialog"
-          aria-controls="save-dialog"
+          aria-controls="memory-dialog"
         >
-          <svg class="floppy-icon" aria-hidden="true" width="21" height="21">
+          <svg class="floppy-icon" width="21" height="21" aria-hidden="true">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
-          <span class="button__text">Сохранить на память</span>
+
+          <span class="button__text"> Сохранить на память </span>
         </button>
       </div>
     </main>
+
+    <dialog class="dialog" id="memory-dialog" aria-label="Сохранить на память">
+      <svg
+        class="floppy-icon dialog__icon"
+        width="39"
+        height="39"
+        aria-hidden="true"
+      >
+        <use href="./svg/floppy.svg#floppy"></use>
+      </svg>
+
+      <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+
+      <button class="button dialog__button" type="button">
+        <span class="button__text">ОК</span>
+      </button>
+    </dialog>
+
     <script src="./scripts/like.js"></script>
+    <script src="./scripts/dialog.js" defer></script>
   </body>
 </html>
