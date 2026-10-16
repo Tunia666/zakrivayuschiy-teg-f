@@ -9,8 +9,25 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+:root {
+  --main-font: 'Inter';
+  --accent-font: 'Press Start 2P';
+
+  --card-text-weight: 400;
+  --card-title-weight: 785;
+}
+
+.header__title {
+  font-family: var(--accent-font), fantasy;
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--card-text-weight);
+}
+
+.card__title {
+  font-variation-settings: 'wght' var(--card-title-weight);
 }
