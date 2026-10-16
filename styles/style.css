@@ -142,15 +142,25 @@
   gap: 6px;
 }
 
+
 .card__icon-button {
   display: grid;
   place-items: center;
   inline-size: 40px;
   block-size: 38px;
-  border: 0;
+  border: 2px solid transparent;
   padding: 0;
   background-color: transparent;
+  transition: border-color 0.3s ease;
   cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
 }
 
 .like-icon {
@@ -160,18 +170,66 @@
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   min-block-size: 38px;
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color);
   padding: 9px 17px;
-  color: #000;
+  color: var(--button-text-color);
   font-family: var(--accent-font), monospace;
   font-size: 14px;
-  background-color: #fff;
+  line-height: 0.9;
+  background-color: var(--button-background-color);
+  box-shadow: 0 0 0 var(--accent-color);
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
+  isolation: isolate;
+}
+
+/* Фокус обычных кнопок */
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* Псевдоэлемент для заливки кнопки */
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Появление заливки слева направо */
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Текст находится над заливкой */
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+/* Дискета также меняет цвет */
+
+.save__button .floppy-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .card__like-button {

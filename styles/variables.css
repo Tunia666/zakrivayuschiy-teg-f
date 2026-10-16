@@ -13,4 +13,7 @@
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
   --label-stroke-color: #fff;
   --content-width: clamp(320px, 100%, 700px);
+  --accent-color: #000;
+  --button-text-color: #fff;
+  --button-background-color: #fff;
 }
