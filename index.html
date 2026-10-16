@@ -17,7 +17,73 @@
         <span class="header__subtitle">закрывающий тег</span>
       </h1>
     </header>
-    <main class="content section-width"></main>
+
+    <main class="content section-width">
+      <section class="cards" aria-label="Этапы обучения">
+        <article class="card">
+          <h2 class="card__title">
+            Фритрек и нулевой спринт: Подготовка к работе
+          </h2>
+
+          <div class="card__image-wrapper">
+            <img
+              class="card__image"
+              src="./images/memory-1.png"
+              alt="Пиксельная иллюстрация начала обучения"
+            />
+          </div>
+
+          <div class="card__content">
+            <div class="card__text">
+              <p>
+                Это было самое начало пути. На этом этапе важно было
+                проникнуться основами и настроиться на учёбу. И, возможно,
+                подумать, как новые знания могут повлиять на ваше будущее.
+              </p>
+
+              <p>Место для ваших воспоминаний о начале обучения.</p>
+            </div>
+
+            <div class="card__buttons">
+              <button
+                class="card__icon-button"
+                type="button"
+                aria-label="Поставить лайк"
+              >
+                <svg
+                  class="like-icon"
+                  viewBox="0 0 24 24"
+                  width="39"
+                  height="39"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+
+              <button class="button card__like-button" type="button">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="save">
+        <button class="button save__button" type="button">
+          <svg class="floppy-icon" width="21" height="21" aria-hidden="true">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+
+          <span class="button__text"> Сохранить на память </span>
+        </button>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
