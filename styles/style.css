@@ -290,3 +290,35 @@
   }
 }
 
+
+@media (width <= 375px) {
+  .header {
+    min-block-size: 327px;
+    padding: 20px 10px;
+  }
+
+  .header__logo {
+    font-size: clamp(36px, 12vw, 49px);
+  }
+
+  .header__subtitle {
+    font-size: clamp(12px, 3.7vw, 14px);
+  }
+
+  .content {
+    margin-block-start: 100px;
+  }
+
+  .save__button {
+    flex-direction: column;
+    inline-size: min(306px, 100%);
+    min-block-size: 84px;
+    gap: 8px;
+    padding: 15px 18px;
+  }
+
+  .save__button .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+}
