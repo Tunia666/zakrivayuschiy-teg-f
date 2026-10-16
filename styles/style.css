@@ -12,7 +12,7 @@
 :root {
   --main-font: "Inter";
   --accent-font: "Press Start 2P";
-
+  --content-width: clamp(320px, 100%, 700px);
   --card-text-weight: 400;
   --card-title-weight: 785;
 }
@@ -33,4 +33,41 @@
 
 .card__title {
   font-variation-settings: "wght" var(--card-title-weight);
+}
+
+.section-width {
+  inline-size: var(--content-width);
+  margin-inline: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 100px;
+  border: 2px solid #000;
+  padding-block: clamp(120px, 9vw, 128px);
+  padding-inline: clamp(10px, 2vw, 25px);
+  background-color: #fff;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #000;
+  font-family: var(--accent-font), fantasy;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header__logo {
+  font-size: clamp(49px, 5vw, 65px);
+}
+
+.header__subtitle {
+  font-size: clamp(14px, 2vw, 23px);
 }
