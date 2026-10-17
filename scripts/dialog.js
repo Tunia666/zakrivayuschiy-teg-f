@@ -1,5 +1,5 @@
 
-const memoryDialog = document.querySelector('#memory-dialog');
+const memoryDialog = document.querySelector('#save-dialog');
 
 const memoryOpenButton = document.querySelector('.save__button');
 
