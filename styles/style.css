@@ -170,7 +170,8 @@
 
 /* Фокус обычных кнопок */
 
-.button:focus {
+.button:focus,
+.button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -225,14 +226,6 @@
 
 .save__button {
   min-block-size: 55px;
-}
-
-.save-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 15px 20px;
 }
 
 .floppy-icon {
@@ -315,11 +308,6 @@
   grid-template-columns: 39px minmax(0, 1fr);
   align-items: center;
   gap: 20px;
-}
-
-.dialog__floppy-icon {
-  inline-size: 39px;
-  block-size: 39px;
 }
 /* Проверка поддержки обводки текста */
 
