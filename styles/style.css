@@ -9,30 +9,15 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-:root {
-  --main-font: "Inter";
-  --accent-font: "Press Start 2P";
-  --content-width: clamp(320px, 100%, 700px);
-  --card-text-weight: 400;
-  --card-title-weight: 785;
-}
-
-.header__title {
-  font-family: var(--accent-font), fantasy;
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--card-text-weight);
+  background-color: #e7e7e7;
   background-image: var(--background-gradient);
   background-attachment: fixed;
   background-size: cover;
-}
-
-.card__title {
-  font-variation-settings: "wght" var(--card-title-weight);
 }
 
 .section-width {
@@ -105,7 +90,6 @@
   overflow: hidden;
   border-block: 2px solid #000;
   aspect-ratio: 1 / 1;
-  position: relative;
 }
 
 .card__image {
@@ -162,14 +146,6 @@
 
 .card__icon-button:focus-visible {
   border-color: var(--accent-color);
-}
-
-.like-icon {
-  display: block;
-  flex: none;
-  inline-size: 27px;
-  block-size: 24px;
-  transform-origin: center;
 }
 
 .button {
@@ -415,6 +391,10 @@
 /*Анимация сердца */
 
 .like-icon {
+  display: block;
+  flex: none;
+  inline-size: 27px;
+  block-size: 24px;
   transform-origin: center;
 }
 
