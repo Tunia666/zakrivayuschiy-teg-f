@@ -21,6 +21,20 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
+    <svg
+      class="svg-sprite"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <symbol id="floppy" viewBox="0 0 40 40">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M2 0h30l8 8v32H0V0h2zm2 4v32h32V10l-6-6h-2v14H9V4H4zm9 0v10h11V4H13zm-3 19h20v13H10V23zm4 4v5h12v-5H14z"
+        />
+      </symbol>
+    </svg>
     <header class="header section-width">
       <h1 class="header__title">
         <span class="header__logo">&lt;/HTML&gt;</span>
@@ -592,21 +606,33 @@
           aria-haspopup="dialog"
           aria-controls="save-dialog"
         >
-          <svg class="floppy-icon" aria-hidden="true" width="21" height="21">
-            <use href="./svg/floppy.svg#floppy"></use>
+          <svg
+            class="floppy-icon"
+            width="21"
+            height="21"
+            viewBox="0 0 40 40"
+            aria-hidden="true"
+          >
+            <use href="#floppy"></use>
           </svg>
+
           <span class="button__text">Сохранить на память</span>
         </button>
       </div>
     </main>
     <dialog class="dialog" id="save-dialog" aria-labelledby="dialog-title">
       <div class="dialog__content">
-        <svg
-          class="floppy-icon dialog__icon"
-          aria-hidden="true"
-          width="39"
-          height="39"
-        >
+        
+<svg
+  class="floppy-icon dialog__icon"
+  width="39"
+  height="39"
+  viewBox="0 0 40 40"
+  aria-hidden="true"
+>
+  <use href="#floppy"></use>
+</svg>
+
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <p class="dialog__text" id="dialog-title">
