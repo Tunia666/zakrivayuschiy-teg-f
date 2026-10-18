@@ -289,7 +289,6 @@
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1.5;
-  text-transform: uppercase;
 }
 
 /* Кнопка закрытия */
@@ -468,7 +467,6 @@
     min-block-size: 1040px;
   }
 }
-
 
 /* Точное соответствие шапки десктопному макету Figma */
 @media (min-width: 1200px) {
