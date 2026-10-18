@@ -4,13 +4,27 @@
   viewBox="0 0 40 40"
 >
   <!-- Белая дискета для кнопки сохранения -->
-  <symbol id="floppy" viewBox="0 0 40 40">
-    <path
-      fill="#fff"
-      fill-rule="evenodd"
-      d="M2 0h30l8 8v32H0V0h2zm2 4v32h32V10l-6-6h-2v14H9V4H4zm9 0v10h11V4H13zm-3 19h20v13H10V23zm4 4v5h12v-5H14z"
-    />
-  </symbol>
+  
+<symbol id="floppy" viewBox="0 0 13 13">
+  <path
+    fill="#fff"
+    d="
+      M0 0h11v1H0z
+      M0 1h1v12H0z
+      M2 1h1v3H2z
+      M7 1h1v3H7z
+      M9 1h1v3H9z
+      M11 1h1v1h-1z
+      M12 2h1v11h-1z
+      M2 4h8v1H2z
+      M2 7h9v1H2z
+      M2 8h1v4H2z
+      M10 8h1v4h-1z
+      M0 12h13v1H0z
+    "
+  />
+</symbol>
+
 
   <!-- Чёрная дискета для модального окна -->
   <symbol id="floppy-dark" viewBox="0 0 40 40">
