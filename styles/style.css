@@ -4,6 +4,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--card-text-weight);
+  font-synthesis: none;
   background-color: var(--page-background-color);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -105,8 +106,10 @@
   flex-direction: column;
   gap: 25px;
   align-self: stretch;
+  min-inline-size: 0;
   font-size: 18px;
   line-height: 21px;
+  overflow-wrap: anywhere;
 }
 
 /* Кнопки */
@@ -115,6 +118,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-shrink: 0;
   gap: 12px;
 }
 
@@ -385,7 +389,7 @@
   }
 
   .content {
-    margin-block-start: 100px;
+    margin-block-start: 101px;
   }
 
   .save__button {
@@ -403,5 +407,56 @@
 
   .card:first-child .card__text p:first-child {
     letter-spacing: 0.05px;
+  }
+}
+
+/* Коррекция начала списка карточек */
+
+@media (min-width: 1441px) {
+  .content {
+    margin-block-start: 99px;
+  }
+}
+
+/* Коррекция размеров только для десктопа */
+@media (min-width: 701px) {
+  .content {
+    margin-block-start: 99px;
+  }
+
+  .cards {
+    gap: 50px;
+  }
+
+  .card:nth-child(1) {
+    min-block-size: 956px;
+  }
+
+  .card:nth-child(2) {
+    min-block-size: 998px;
+  }
+
+  .card:nth-child(3) {
+    min-block-size: 956px;
+  }
+
+  .card:nth-child(4) {
+    min-block-size: 998px;
+  }
+
+  .card:nth-child(5) {
+    min-block-size: 1019px;
+  }
+
+  .card:nth-child(6) {
+    min-block-size: 956px;
+  }
+
+  .card:nth-child(7) {
+    min-block-size: 998px;
+  }
+
+  .card:nth-child(8) {
+    min-block-size: 1040px;
   }
 }
