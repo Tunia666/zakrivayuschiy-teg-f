@@ -1,47 +1,13 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
 .page {
   display: flow-root;
-  position: relative;
-  isolation: isolate;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--card-text-weight);
-  background-color: #fff;
-}
-
-/* Градиент расположен только в верхней части страницы */
-
-.page::before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline: 0;
-  z-index: 0;
-  block-size: 960px;
+  background-color: var(--page-background-color);
   background-image: var(--background-gradient);
-  background-size: 100% 960px;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
-  pointer-events: none;
-}
-
-/* Содержимое располагается над фоном */
-
-.header,
-.content {
-  position: relative;
-  z-index: 1;
 }
 
 .section-width {
@@ -54,10 +20,10 @@
   justify-content: center;
   align-items: center;
   margin-block: 100px;
-  border: 2px solid #000;
+  border: 2px solid var(--color-black);
   padding-block: clamp(120px, 9vw, 128px);
   padding-inline: clamp(10px, 2vw, 25px);
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .header__title {
@@ -65,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  color: #000;
+  color: var(--color-black);
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
   line-height: 1;
@@ -96,15 +62,15 @@
 /* Карточка */
 
 .card {
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 2px solid var(--color-black);
+  background-color: var(--color-white);
 }
 
 .card__title {
   padding: 4px 10px;
   font-size: 18px;
   line-height: 1.25;
-  font-variation-settings: "wght" var(--card-title-weight);
+  font-variation-settings: "wght" var(--card-text-weight);
 }
 
 /* Изображение */
@@ -112,15 +78,16 @@
 .card__image-wrapper {
   position: relative;
   overflow: hidden;
-  border-block: 2px solid #000;
-  aspect-ratio: 1 / 1;
+  border-block: 2px solid var(--color-black);
 }
 
 .card__image {
   display: block;
   inline-size: 100%;
-  block-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
 }
 
 /* Текст карточки */
@@ -148,20 +115,24 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .card__icon-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: 39px;
+  inline-size: 27px;
   block-size: 38px;
   padding: 0;
   border: 2px solid transparent;
   background-color: transparent;
   transition: border-color 0.3s ease;
   cursor: pointer;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
 }
 
 .card__icon-button:focus {
@@ -182,7 +153,7 @@
   border: 2px solid var(--accent-color);
   padding: 9px 17px;
   color: var(--button-text-color);
-  font-family: var(--accent-font), monospace;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 0.9;
   background-color: var(--button-background-color);
@@ -194,9 +165,11 @@
 
 /* Фокус обычных кнопок */
 
-.button:focus,
-.button:focus-visible {
+.button:focus {
   outline: none;
+}
+
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -232,12 +205,7 @@
 .save__button .floppy-icon {
   position: relative;
   z-index: 1;
-  color: var(--button-text-color);
   mix-blend-mode: difference;
-}
-
-.card__like-button {
-  min-inline-size: 130px;
 }
 
 /* Кнопка сохранения */
@@ -254,10 +222,9 @@
 
 .floppy-icon {
   display: block;
+  flex-shrink: 0;
   inline-size: 21px;
   block-size: 21px;
-  flex-shrink: 0;
-  color: var(--contour-color);
 }
 
 /* Лейбл на изображении */
@@ -267,7 +234,7 @@
   top: 25px;
   right: 25px;
   z-index: 1;
-  color: #000;
+  color: var(--color-black);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1;
@@ -283,10 +250,10 @@
   inline-size: 353px;
   max-inline-size: calc(100% - 34px);
   margin: auto;
-  border: 2px solid #000;
+  border: 2px solid var(--color-black);
   padding: 28px;
-  color: #000;
-  background-color: #fff;
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 /* Открытое модальное окно */
@@ -304,24 +271,20 @@
   flex: 0 0 39px;
   inline-size: 39px;
   block-size: 39px;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
-.svg-sprite {
-  position: absolute;
-  inline-size: 0;
-  block-size: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
 /* Текст модального окна */
 
 .dialog__text {
   flex: 1;
   min-inline-size: 0;
   margin: 0;
-  font-family: var(--accent-font), monospace;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 /* Кнопка закрытия */
@@ -349,22 +312,15 @@
 
 /* Проверка поддержки обводки текста */
 
-@supports (
-  (-webkit-text-stroke: 1px var(--label-stroke-color)) or
-    (text-stroke: 1px var(--label-stroke-color))
-) {
+@supports (-webkit-text-stroke: 1px #fff) {
   .card__label {
     -webkit-text-stroke: 1px var(--label-stroke-color);
-    text-stroke: 1px var(--label-stroke-color);
   }
 }
 
-/* Запасной вариант через тень */
+/* Запасной вариант для браузеров без поддержки обводки */
 
-@supports not (
-  (-webkit-text-stroke: 1px var(--label-stroke-color)) or
-    (text-stroke: 1px var(--label-stroke-color))
-) {
+@supports not (-webkit-text-stroke: 1px #fff) {
   .card__label {
     text-shadow:
       1px 0 var(--label-stroke-color),
@@ -375,148 +331,52 @@
 }
 
 /* Карточка 1 — Начало: тёплые воспоминания */
-.card__image_filter_1 {
+.card__image_filter_sepia-saturate {
   filter: sepia(0.35) saturate(1.2);
 }
 
 /* Карточка 2 — Сомнения */
-.card__image_filter_2 {
+.card__image_filter_grayscale {
   filter: grayscale(0.8);
 }
 
 /* Карточка 3 — Смелость */
-.card__image_filter_3 {
+.card__image_filter_contrast {
   filter: contrast(1.35);
 }
 
 /* Карточка 4 — Поиск */
-.card__image_filter_4 {
+.card__image_filter_hue-rotate {
   filter: hue-rotate(45deg);
 }
 
 /* Карточка 5 — Поддержка */
-.card__image_filter_5 {
+.card__image_filter_saturate {
   filter: saturate(1.55);
 }
 
 /* Карточка 6 — Находчивость */
-.card__image_filter_6 {
+.card__image_filter_invert-hue {
   filter: invert(0.15) hue-rotate(55deg);
 }
 
 /* Карточка 7 — Упорство */
-.card__image_filter_7 {
+.card__image_filter_brightness {
   filter: brightness(0.72);
 }
 
 /* Карточка 8 — Дальше */
-.card__image_filter_8 {
+.card__image_filter_brightness-contrast {
   filter: brightness(1.08) contrast(1.15);
 }
 
-/*Анимация сердца */
-
-.like-icon {
-  display: block;
-  flex: none;
-  inline-size: 27px;
-  block-size: 24px;
-  transform-origin: center;
-}
-
-.like-icon .heart {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Исходное состояние */
-
-.like-icon .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-.like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon .sparks {
-  fill: var(--animation-fill-color);
-  opacity: 0;
-}
-
-/* Наведение курсора */
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-/* Нажатие и удержание */
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-/* Включённый лайк */
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-/* Увеличение сердца */
-
-.like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in 0.1s 1;
-}
-
-/* Появление искр */
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s 1;
-}
-
-@media (width <= 375px) {
+@media (max-width: 376px) {
   .header {
-    min-block-size: 327px;
-    padding: 20px 10px;
-  }
-
-  .page::before {
-    block-size: 667px;
-    background-size: 100% 667px;
+    padding: 120px 10px;
   }
 
   .header__logo {
-    font-size: 49px;
+    font-size: clamp(38px, 13.07vw, 49px);
   }
 
   .header__subtitle {
@@ -535,8 +395,7 @@
     padding: 15px 18px;
   }
 
-  .save__button .floppy-icon {
-    inline-size: 28px;
-    block-size: 28px;
+  .card:first-child .card__text p:first-child {
+    letter-spacing: 0.05px;
   }
 }

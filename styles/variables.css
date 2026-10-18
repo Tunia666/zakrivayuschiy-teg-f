@@ -1,5 +1,3 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
-
 :root {
   --main-font: "Inter";
   --accent-font: "Press Start 2P";
@@ -12,13 +10,18 @@
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
-  --label-stroke-color: #fff;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --page-background-color: var(--color-white);
+  --label-stroke-color: var(--color-white);
+
   --content-width: clamp(320px, 100%, 700px);
 
-  --accent-color: #000;
-  --button-text-color: #fff;
-  --button-background-color: #fff;
+  --accent-color: var(--color-black);
+  --button-text-color: var(--color-white);
+  --button-background-color: var(--color-white);
 
-  --contour-color: #000;
+  --contour-color: var(--color-black);
   --animation-fill-color: #f00;
 }
