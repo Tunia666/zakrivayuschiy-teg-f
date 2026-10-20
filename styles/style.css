@@ -21,10 +21,10 @@
   justify-content: center;
   align-items: center;
   margin-block: 100px;
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--foreground-color);
   padding-block: clamp(120px, 9vw, 127px);
   padding-inline: clamp(10px, 2vw, 25px);
-  background-color: var(--color-white);
+  background-color: var(--surface-color);
 }
 
 .header__title {
@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  color: var(--color-black);
+  color: var(--foreground-color);
   font-family: var(--accent-font), fantasy;
   font-weight: 400;
   line-height: 1;
@@ -63,8 +63,8 @@
 /* Карточка */
 
 .card {
-  border: 2px solid var(--color-black);
-  background-color: var(--color-white);
+  border: 2px solid var(--foreground-color);
+  background-color: var(--surface-color);
 }
 
 .card__title {
@@ -79,7 +79,7 @@
 .card__image-wrapper {
   position: relative;
   overflow: hidden;
-  border-block: 2px solid var(--color-black);
+  border-block: 2px solid var(--foreground-color);
 }
 
 .card__image {
@@ -157,9 +157,6 @@
   border: 2px solid var(--accent-color);
   padding: 9px 17px;
   color: var(--button-text-color);
-  font-family: var(--accent-font), fantasy;
-  font-size: 14px;
-  line-height: 0.9;
   background-color: var(--button-background-color);
   box-shadow: 0 0 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
@@ -201,7 +198,13 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-color);
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 0.9;
   mix-blend-mode: difference;
+  white-space: nowrap;
+  text-align: center;
 }
 
 /* Дискета также меняет цвет */
@@ -239,7 +242,7 @@
   top: 25px;
   right: 25px;
   z-index: 1;
-  color: var(--color-black);
+  color: var(--foreground-color);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1;
@@ -255,10 +258,10 @@
   inline-size: 353px;
   max-inline-size: calc(100% - 34px);
   margin: auto;
-  border: 2px solid var(--color-black);
+  border: 2px solid var(--foreground-color);
   padding: 28px;
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--foreground-color);
+  background-color: var(--surface-color);
 }
 
 /* Открытое модальное окно */
@@ -296,6 +299,7 @@
 .dialog__button {
   inline-size: 100%;
   min-block-size: 38px;
+  text-transform: uppercase;
 }
 
 /* Затемнение фона */
@@ -374,6 +378,8 @@
   filter: brightness(1.08) contrast(1.15);
 }
 
+/* Мобильные размеры макета */
+
 @media (max-width: 376px) {
   .header {
     padding: 120px 10px;
@@ -397,106 +403,31 @@
     justify-items: center;
     align-content: center;
     row-gap: 8px;
-    inline-size: 306px;
-    block-size: 84px;
+    inline-size: min(306px, 100%);
     min-block-size: 84px;
     padding: 0 18px;
   }
 
   .save__button .floppy-icon {
-    display: block;
     inline-size: 28px;
     block-size: 28px;
-    flex-shrink: 0;
     shape-rendering: crispEdges;
-  }
-
-  .save__button .button__text {
-    font-family: "Press Start 2P", fantasy;
-    font-size: 14px;
-    line-height: 14px;
-    font-weight: 400;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .card:first-child .card__text p:first-child {
-    letter-spacing: 0.05px;
-  }
-}
-
-/* Коррекция размеров только для десктопа */
-@media (min-width: 701px) {
-  .content {
-    margin-block-start: 99px;
-  }
-
-  .cards {
-    gap: 50px;
-  }
-
-  .card:nth-child(1) {
-    min-block-size: 956px;
-  }
-
-  .card:nth-child(2) {
-    min-block-size: 998px;
-  }
-
-  .card:nth-child(3) {
-    min-block-size: 956px;
-  }
-
-  .card:nth-child(4) {
-    min-block-size: 998px;
-  }
-
-  .card:nth-child(5) {
-    min-block-size: 1019px;
-  }
-
-  .card:nth-child(6) {
-    min-block-size: 956px;
-  }
-
-  .card:nth-child(7) {
-    min-block-size: 998px;
-  }
-
-  .card:nth-child(8) {
-    min-block-size: 1040px;
   }
 }
 
 /* Точное соответствие шапки десктопному макету Figma */
+
 @media (min-width: 1200px) {
   .header {
-    inline-size: 700px;
-    block-size: 368px;
-    margin-block: 100px 98px;
-    padding-block: 0;
-    padding-inline: 25px;
-  }
-
-  .header__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    line-height: 1;
+    margin-block-end: 98px;
+    padding-block: 128px;
   }
 
   .header__logo {
     font-size: 65px;
-    line-height: 65px;
   }
 
   .header__subtitle {
     font-size: 23px;
-    line-height: 23px;
-  }
-
-  .content {
-    margin-block-start: 98px;
   }
 }
