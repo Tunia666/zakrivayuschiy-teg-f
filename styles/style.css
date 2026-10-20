@@ -292,6 +292,7 @@
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 /* Кнопка закрытия */
