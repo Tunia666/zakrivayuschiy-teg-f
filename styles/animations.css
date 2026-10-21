@@ -34,6 +34,7 @@
   fill: var(--animation-fill-color);
   opacity: 0;
 }
+
 /* Наведение курсора */
 
 .like-icon:hover .core {

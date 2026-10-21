@@ -3,25 +3,23 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 40 40"
 >
-  <!-- Белая дискета для кнопки сохранения -->
-  
-<symbol id="floppy" viewBox="0 0 13 13">
-  <path
-    fill= "currentColor"
-    d="
-      M0 0h11v1H0z
-      M0 1h1v12H0z
-      M2 1h1v3H2z
-      M7 1h1v3H7z
-      M9 1h1v3H9z
-      M11 1h1v1h-1z
-      M12 2h1v11h-1z
-      M2 4h8v1H2z
-      M2 7h9v1H2z
-      M2 8h1v4H2z
-      M10 8h1v4h-1z
-      M0 12h13v1H0z
-    "
-  />
-</symbol>
+  <symbol id="floppy" viewBox="0 0 13 13">
+    <path
+      fill="currentColor"
+      d="
+        M0 0h11v1H0z
+        M0 1h1v12H0z
+        M2 1h1v3H2z
+        M7 1h1v3H7z
+        M9 1h1v3H9z
+        M11 1h1v1h-1z
+        M12 2h1v11h-1z
+        M2 4h8v1H2z
+        M2 7h9v1H2z
+        M2 8h1v4H2z
+        M10 8h1v4h-1z
+        M0 12h13v1H0z
+      "
+    />
+  </symbol>
 </svg>
