@@ -144,7 +144,8 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color);
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 .button {
@@ -319,7 +320,7 @@
   min-inline-size: 0;
 }
 
-/* Проверка поддержки обводки текста */
+/* Обводка текста лейблов */
 
 @supports (-webkit-text-stroke: 1px #fff) {
   .card__label {
@@ -327,7 +328,7 @@
   }
 }
 
-/* Запасной вариант для браузеров без поддержки обводки */
+/* Запасная обводка при отсутствии поддержки */
 
 @supports not (-webkit-text-stroke: 1px #fff) {
   .card__label {
@@ -417,6 +418,10 @@
 
   .dialog {
     padding-inline: 38px;
+  }
+
+  .dialog__content {
+    inline-size: calc(100% + 32px);
   }
 }
 

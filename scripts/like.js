@@ -1,6 +1,7 @@
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const likeTextTimers = new WeakMap();
 
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
@@ -17,15 +18,15 @@ function toggleIsLiked(heart, button) {
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
-  } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
-  }
+  clearTimeout(likeTextTimers.get(button));
+
+  const isLiked = heart.classList.contains('is-liked');
+  const text = isLiked ? 'Unlike' : 'Like';
+
+  const timer = setTimeout(() => {
+    button.querySelector('.button__text').textContent = text;
+    likeTextTimers.delete(button);
+  }, 500);
+
+  likeTextTimers.set(button, timer);
 }
