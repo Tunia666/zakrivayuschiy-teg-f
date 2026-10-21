@@ -414,6 +414,10 @@
     block-size: 28px;
     shape-rendering: crispEdges;
   }
+
+  .dialog {
+    padding-inline: 38px;
+  }
 }
 
 /* Точное соответствие шапки десктопному макету Figma */
